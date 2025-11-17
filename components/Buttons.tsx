@@ -19,9 +19,9 @@ export default function Buttons({
 
   // text color based on background (like calculator project)
   const textColor =
-    variant === 'primary'
-      ? 'text-white' // dark bg → white text
-      : 'text-black'; // light bg → dark text
+    variant === 'secondary'
+      ? '#FFFFFF' // dark bg → white text
+      : '#000000'; // light bg → dark text
 
   return (
     <TouchableOpacity
@@ -30,8 +30,8 @@ export default function Buttons({
       className={`${bg} w-48 h-16 rounded-xl items-center justify-center`}
     >
       <Text
-        className={`${textColor} text-[20px]`}
-        style={{ fontFamily: 'Roboto_500Medium' }}
+        className={'text-[20px]'}
+        style={{ fontFamily: 'Roboto_500Medium', color: textColor }}
       >
         {title}
       </Text>
