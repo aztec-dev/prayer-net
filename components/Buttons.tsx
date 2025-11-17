@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, useColorScheme } from 'react-native';
 
 type Props = {
   title: string;
@@ -16,10 +16,11 @@ export default function Buttons({
 }: Props) {
   // background based on type
   const bg = variant === 'primary' ? 'bg-secondary' : 'bg-card';
+  const colourScheme = useColorScheme();
 
   // text color based on background (like calculator project)
   const textColor =
-    variant === 'secondary'
+    variant === 'primary'
       ? '#FFFFFF' // dark bg → white text
       : '#000000'; // light bg → dark text
 
