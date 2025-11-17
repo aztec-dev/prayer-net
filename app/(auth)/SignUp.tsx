@@ -1,5 +1,17 @@
-import { Text } from 'react-native';
+import Buttons from '@/components/Buttons';
+import { useRouter } from 'expo-router';
+import { Text, View } from 'react-native';
 
 export default function SignUp() {
-  return <Text>Sign Up</Text>;
+  const route = useRouter();
+  return (
+    <View>
+      <Text>Sign Up</Text>
+      <Buttons
+        title="Back"
+        onPress={() => route.replace('/')}
+        variant="secondary"
+      ></Buttons>
+    </View>
+  );
 }
