@@ -47,7 +47,7 @@ export default function Index() {
 
         <Buttons
           title="Sign up"
-          variant="secondary"
+          variant="primary"
           onPress={() => router.navigate('/SignUp')}
         />
       </View>
