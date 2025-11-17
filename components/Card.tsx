@@ -1,8 +1,13 @@
-import { Text, View } from "react-native";
+import { Text, View } from 'react-native';
 
-export default function Card() {
+type Props = {
+  title: string; // for now, just for the 'sign in' and 'sign up' texts.
+  children: React.ReactNode; // to pass in any content.
+};
+
+export default function Card({ title, children }: Props) {
   return (
-    <View className="bg-white shadow-slate-500">
+    <View className="">
       <Text>Card</Text>
     </View>
   );
