@@ -1,13 +1,8 @@
+import Buttons from '@/components/Buttons';
 import HeroSection from '@/components/Hero';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import {
-  ActivityIndicator,
-  Text,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from 'react-native';
+import { Text, View, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import '../global.css';
 
@@ -43,33 +38,18 @@ export default function Index() {
         className="flex flex-row justify-center gap-6"
         style={{ marginTop: topSpacing }}
       >
-        <TouchableOpacity
-          className="bg-card w-48 h-16 mt flex-initial items-center justify-center rounded-xl"
+        <Buttons
+          title="Sign in"
+          variant="primary"
           onPress={() => router.navigate('/(auth)/SignIn')}
           disabled={loading}
-        >
-          {loading ? (
-            <ActivityIndicator color="#fff" />
-          ) : (
-            <Text
-              className="text-text text-[20px]"
-              style={{ fontFamily: 'Roboto_500Medium' }}
-            >
-              Sign in
-            </Text>
-          )}
-        </TouchableOpacity>
-        <TouchableOpacity
-          className="bg-card w-48 h-16 flex-initial items-center justify-center rounded-xl"
+        />
+
+        <Buttons
+          title="Sign up"
+          variant="secondary"
           onPress={() => router.navigate('/SignUp')}
-        >
-          <Text
-            className="text-text text-[20px]"
-            style={{ fontFamily: 'Roboto_500Medium' }}
-          >
-            Sign up
-          </Text>
-        </TouchableOpacity>
+        />
       </View>
     </SafeAreaView>
   );
