@@ -91,6 +91,7 @@ prayer-net/
 ## Development
 
 This project uses:
+
 - **Expo Router** for navigation with typed routes
 - **NativeWind** for styling (TailwindCSS syntax)
 - **Supabase** for backend services
