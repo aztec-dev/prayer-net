@@ -1,50 +1,126 @@
-# Welcome to your Expo app 👋
+# Prayer-Net 🙏
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application built with Expo that brings Christians together through prayer. Prayer-Net provides a platform for believers to connect, share prayer requests, and support one another in faith.
 
-## Get started
+> "For where two or three are gathered together in My name, I am there in the midst of them." - Matthew 18:20
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- **User Authentication**: Secure sign-in and sign-up functionality powered by Supabase
+- **Cross-Platform**: Built with React Native and Expo for iOS, Android, and web
+- **Modern UI**: Styled with NativeWind (TailwindCSS for React Native)
+- **File-based Routing**: Intuitive navigation using Expo Router
+- **Responsive Design**: Optimized for phones and tablets, including iPad landscape mode
 
-2. Start the app
+## Tech Stack
 
-   ```bash
-   npx expo start
-   ```
+- **Framework**: React Native 0.81.5 with Expo ~54.0
+- **Navigation**: Expo Router ~6.0 with file-based routing
+- **Styling**: NativeWind 4.2 (TailwindCSS)
+- **Backend**: Supabase for authentication and database
+- **TypeScript**: Full TypeScript support
+- **Fonts**: Custom fonts with Playfair and Roboto
 
-In the output, you'll find options to open the app in a
+## Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js (LTS version recommended)
+- npm or yarn
+- Expo CLI
+- iOS Simulator (Mac only) or Android Emulator
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Getting Started
 
-## Get a fresh project
-
-When you're ready, run:
+### 1. Install Dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Environment Setup
 
-## Learn more
+Create a `.env` file in the root directory with your Supabase credentials:
 
-To learn more about developing your project with Expo, look at the following resources:
+```env
+EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 3. Start the Development Server
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+In the terminal output, you'll find options to open the app:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Press `i` for iOS simulator
+- Press `a` for Android emulator
+- Press `w` for web browser
+- Scan the QR code with Expo Go app (limited functionality)
+
+For the best development experience, use a [development build](https://docs.expo.dev/develop/development-builds/introduction/).
+
+## Available Scripts
+
+- `npm start` - Start the Expo development server
+- `npm run android` - Start on Android emulator
+- `npm run ios` - Start on iOS simulator
+- `npm run web` - Start in web browser
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+prayer-net/
+├── app/                    # File-based routing
+│   ├── (app)/             # Main app routes
+│   ├── (auth)/            # Authentication routes
+│   │   ├── SignIn.tsx
+│   │   └── SignUp.tsx
+│   ├── _layout.tsx        # Root layout
+│   └── index.tsx          # Landing page
+├── components/            # Reusable components
+│   ├── Buttons.tsx
+│   ├── Card.tsx
+│   └── Hero.tsx
+├── lib/                   # Utilities and services
+│   └── supabase.ts        # Supabase client configuration
+└── assets/                # Images and static resources
+```
+
+## Development
+
+This project uses:
+- **Expo Router** for navigation with typed routes
+- **NativeWind** for styling (TailwindCSS syntax)
+- **Supabase** for backend services
+- **TypeScript** for type safety
+- **ESLint & Prettier** for code quality
+
+## Building for Production
+
+### Create a production build with EAS:
+
+```bash
+npm install -g eas-cli
+eas build --platform ios
+eas build --platform android
+```
+
+For more information, see the [EAS Build documentation](https://docs.expo.dev/build/introduction/).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is private and proprietary.
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [Expo Router Documentation](https://docs.expo.dev/router/introduction/)
+- [NativeWind Documentation](https://www.nativewind.dev/)
+- [Supabase Documentation](https://supabase.com/docs)
