@@ -32,7 +32,7 @@ export default function SignIn() {
     if (error) {
       Alert.alert(error.message);
     } else if (data?.session) {
-      route.replace('/(app)');
+      route.replace('/(app)/Profile');
     }
     setLoading(false);
   }
@@ -48,7 +48,7 @@ export default function SignIn() {
           keyboardShouldPersistTaps="handled"
         >
           <View className="my-auto">
-            <Card title="Good to See You" width="w-[90%]">
+            <Card title="Good To See You Again!" width="w-[90%]">
               <View className="my-3 self-stretch">
                 <TextInput
                   className="border border-[#ccc] rounded-lg p-6 text-[16px]"
@@ -84,7 +84,7 @@ export default function SignIn() {
                     />
                     <Buttons
                       title="Login"
-                      onPress={() => route.replace('/')}
+                      onPress={() => AuthUser()}
                       variant="primary"
                       width="flex-1"
                     />
