@@ -47,7 +47,7 @@ export default function Index() {
         style={{ marginTop: topSpacing }}
       >
         <Buttons
-          title="Continue with Email"
+          title="Login"
           variant="primary"
           onPress={() => router.navigate('/(auth)/SignIn')}
           disabled={loading}
@@ -56,7 +56,7 @@ export default function Index() {
         />
 
         <Buttons
-          title="Continue with Google"
+          title="Create an Account"
           variant="primary"
           onPress={() => router.navigate('/(auth)/SignUp')}
           width="w-[90%]"
