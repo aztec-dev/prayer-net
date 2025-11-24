@@ -18,7 +18,7 @@ export default function Card({
 }: Props) {
   return (
     <View
-      className={`flex-auto flex-col container p-5 mx-auto bg-card rounded-lg ${textSize} ${width} ${height}`}
+      className={`container p-5 mx-auto bg-card rounded-lg ${textSize} ${width} ${height}`}
     >
       <Text className="text-[32px] text-text">{title}</Text>
       <View>{children}</View>
