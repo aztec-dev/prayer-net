@@ -20,9 +20,13 @@ export default function Card({
     <View
       className={`container p-5 mx-auto bg-card rounded-lg ${textSize} ${width} ${height}`}
     >
-      <Text className="text-[32px] text-text">{title}</Text>
+      <Text
+        className="text-[32px] text-text"
+        style={{ fontFamily: 'Playfair_400Regular' }}
+      >
+        {title}
+      </Text>
       <View>{children}</View>
     </View>
   );
 }
-// container p-5 mx-auto my-auto bg-card rounded-lg flex-col w-[70%]
