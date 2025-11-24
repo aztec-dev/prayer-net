@@ -11,44 +11,56 @@ export default function Index() {
   const { width, height } = useWindowDimensions();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
   const isLandscape = width >= height;
-  const isIpadLandscape = isLandscape && width >= 700;
-  const topSpacing = isLandscape ? height * 0.1 : 144; // 144 ≈ mt-36
+  // device types
+  const isIpad = width >= 700;
+  const isIpadLandscape = isLandscape && isIpad;
+  const isIpadPortrait = !isIpadLandscape && isIpad;
+  const topSpacing = isIpadLandscape
+    ? height * 0.12
+    : isIpadPortrait
+      ? height * 0.2
+      : 144;
 
   return (
     <SafeAreaView className="bg-background flex-auto flex-col">
       <HeroSection />
       <View className="py-5 px-4 mt-4">
         <Text
-          className={`text-text ${isIpadLandscape ? 'text-[3rem]' : 'text-[2rem]'} capitalize`}
+          className={`text-text ${isIpad ? 'text-[3rem]' : 'text-[2rem]'} capitalize`}
           style={{ fontFamily: 'Roboto_800ExtraBold' }}
         >
           Bringing Christians together through prayer
         </Text>
         <Text
-          className={`text-text py-1.5 ${isIpadLandscape ? 'text-[2rem]' : 'text-[1.5rem]'}`}
+          className={`text-text py-1.5 ${isIpad ? 'text-[2rem]' : 'text-[1.5rem]'}`}
           style={{ fontFamily: 'Playfair_400Regular' }}
         >
           “For where two or three are gathered together in My name, I am there
-          in the midst of them.” - Matt. 18:20
+          in the midst of them.” - Matt. 18:20 {width} {height}
         </Text>
       </View>
       {/* sign in/up buttons */}
       <View
-        className="flex flex-row justify-center gap-6"
+        className="flex-shrink-0 items-center justify-start"
         style={{ marginTop: topSpacing }}
       >
         <Buttons
-          title="Sign in"
+          title="Continue with Email"
           variant="primary"
           onPress={() => router.navigate('/(auth)/SignIn')}
           disabled={loading}
+          width="w-[90%]"
+          height="h-[4.5rem]"
         />
 
         <Buttons
           title="Sign up"
           variant="primary"
-          onPress={() => router.navigate('/SignUp')}
+          onPress={() => router.navigate('/(auth)/SignUp')}
+          width="w-[90%]"
+          height="h-[4.5rem]"
         />
       </View>
     </SafeAreaView>
