@@ -37,30 +37,30 @@ export default function Profile() {
 
       console.log('Auth User ID:', user?.id);
 
-      // First get the user_profile.id
+      // get the user_profile.id
       const { data: userProfile, error: profileError } = await supabase
         .from('user_profile')
         .select('id')
         .eq('user_id', user?.id)
         .single();
 
-      console.log('User Profile:', userProfile);
-      console.log('Profile Error:', profileError);
+      //   console.log('User Profile:', userProfile);
+      //   console.log('Profile Error:', profileError);
 
-      // Then get prayers for this user_profile.id
+      // get prayers for this user_profile.id
       const { data, error } = await supabase
         .from('prayers')
         .select('*')
         .eq('user_profile_id', userProfile?.id);
 
-      console.log('Prayers Data:', data);
-      console.log('Prayers Error:', error);
+      //   console.log('Prayers Data:', data);
+      //   console.log('Prayers Error:', error);
 
       if (error) {
         Alert.alert(error.message);
       } else {
         setPrayers(data);
-        console.log('Prayers set to state:', data);
+        // console.log('Prayers set to state:', data);
       }
     };
     getPrayers();
