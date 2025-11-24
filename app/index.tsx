@@ -56,7 +56,7 @@ export default function Index() {
         />
 
         <Buttons
-          title="Sign up"
+          title="Continue with Google"
           variant="primary"
           onPress={() => router.navigate('/(auth)/SignUp')}
           width="w-[90%]"
