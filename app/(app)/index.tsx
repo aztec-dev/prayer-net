@@ -1,3 +1,5 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 export default function Index() {
-  return null;
+  return <SafeAreaView className="flex-1 bg-background"></SafeAreaView>;
 }
