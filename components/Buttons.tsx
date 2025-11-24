@@ -1,11 +1,16 @@
 import React from 'react';
-import { Text, TouchableOpacity, useColorScheme } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+
+// This is a custom button component
 
 type Props = {
   title: string;
   onPress: () => void;
   variant?: 'primary' | 'secondary'; // or any styles you want
   disabled?: boolean;
+  icon?: React.ReactElement;
+  width?: string;
+  height?: string;
 };
 
 export default function Buttons({
@@ -13,10 +18,12 @@ export default function Buttons({
   onPress,
   variant = 'primary',
   disabled = false,
+  icon,
+  width = 'w-auto',
+  height = 'h-auto',
 }: Props) {
   // background based on type
   const bg = variant === 'primary' ? 'bg-secondary' : 'bg-card';
-  const colourScheme = useColorScheme();
 
   // text color based on background (like calculator project)
   const textColor =
@@ -28,14 +35,22 @@ export default function Buttons({
     <TouchableOpacity
       onPress={onPress}
       disabled={disabled}
-      className={`${bg} w-48 h-16 rounded-xl items-center justify-center`}
+      className={
+        icon
+          ? ''
+          : `${bg} ${width} ${height} h-16 rounded-full my-1 items-center justify-center`
+      }
     >
-      <Text
-        className={'text-[20px]'}
-        style={{ fontFamily: 'Roboto_500Medium', color: textColor }}
-      >
-        {title}
-      </Text>
+      {icon ? (
+        icon
+      ) : (
+        <Text
+          className={'text-[20px]'}
+          style={{ fontFamily: 'Roboto_500Medium', color: textColor }}
+        >
+          {title}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 }
