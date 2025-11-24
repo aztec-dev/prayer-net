@@ -37,7 +37,7 @@ export default function Buttons({
       disabled={disabled}
       className={
         icon
-          ? ''
+          ? `${width} ${height}`
           : `${bg} ${width} ${height} h-16 rounded-full my-1 items-center justify-center`
       }
     >
