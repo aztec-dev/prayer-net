@@ -14,14 +14,14 @@ export default function Prayer() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      // First get the user_profile.id
+      // get the user_profile.id
       const { data: userProfile } = await supabase
         .from('user_profile')
         .select('id')
         .eq('user_id', user?.id)
         .single();
 
-      // Then get prayers for this user_profile.id
+      // get prayers for this user_profile.id
       const { data, error } = await supabase
         .from('prayers')
         .select('*')
