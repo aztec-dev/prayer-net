@@ -62,11 +62,8 @@ For the best development experience, use a [development build](https://docs.expo
 
 ## Available Scripts
 
-- `npm start` - Start the Expo development server
-- `npm run android` - Start on Android emulator
-- `npm run ios` - Start on iOS simulator
-- `npm run web` - Start in web browser
-- `npm run lint` - Run ESLint
+- `npx expo start` - Start the Expo development server
+- `npx expo lint` - Run ESLint
 
 ## Project Structure
 
